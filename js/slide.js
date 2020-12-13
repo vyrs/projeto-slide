@@ -21,8 +21,8 @@ export default class Slide {
       event.preventDefault();
       this.dist.startX = event.clientX;
       movetype = 'mousemove';
-    } else { // não precisa de event.preventDefault(); pq no mobile ele não tenta arrastar a imagem igual no web quando clica
-      this.dist.startX = event.changedTouches[0].clientX; // dessa forma que pegar o clientX no mobile, pode usar console.log para ver
+    } else {
+      this.dist.startX = event.changedTouches[0].clientX;
       movetype = 'touchmove';
     }
     this.wrapper.addEventListener(movetype, this.onMove);
